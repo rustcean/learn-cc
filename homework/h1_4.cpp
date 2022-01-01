@@ -16,7 +16,7 @@ int main()
     stu.score[1]=99.5;
     stu.score[2]=99.5;
     void print(student *);
-    print(&stu);
+    print(&stu);//这个不是取地址吗？
     return 0;
 }
 void print(student *p)

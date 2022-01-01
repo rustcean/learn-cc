@@ -5,15 +5,23 @@
  int main()
  {
     string array;
-    cin>>array;
+    cin>>array;//读不了空格
     cout<<array<<endl;
-    int i=strlen(std::array);
-    for(int j=0;j<i/2;j++,i--)
+    int i=array.size();//
+    cout<<i<<endl;
+    int reverse(string *a,int i);
+    reverse(&array,i);
+    cout<<array<<endl;
+return 0;
+ }
+ int reverse(string *a,int i)
+ {
+     int b=i/2;
+     for(int j=0;j<b;j++,i--)
     {
-        int temp=array[i];
-        array[i]=array[j];
-        array[j]=temp;
-    }
-    cout<<array<<endl;
-
+        string temp=*(a+j);
+        *(a+j)=*(a+i);
+        *(a+i)=temp;
+    }  
+    return 0;  
  }

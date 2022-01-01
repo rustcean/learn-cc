@@ -3,6 +3,6 @@
 int main(void)
 {
     int n=0;
-    A(A(printf("%d\n",++n)));
+    A(A(printf("%d\n",++n)));//10*10次
     return 0;
 }
