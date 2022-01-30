@@ -10,9 +10,9 @@ int main()
         *p2=*p1;
     }
     *p2='\0';//此时的p2已经指向了str2的没有意义字段,所以用来结尾
-    p1=str1;
-    p2=str2;
-    cout<<"str1 is "<<p1<<endl;//有点东西
+    p1=str1;//此时已经指向了str1的尾部,所以要重新指回来
+    p2=str2;//
+    cout<<"str1 is "<<p1<<endl;//有点东西,竟然是输出了语句
     cout<<"str2 is "<<p2<<endl;//
     return 0;
 }

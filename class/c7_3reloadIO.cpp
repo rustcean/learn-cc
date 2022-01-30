@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+//复数类的定义
 class Complex
 {
     public:
@@ -14,6 +15,7 @@ class Complex
     int it;//虚部
 };
 Complex::Complex(int r,int i){real=r;it=i;}
+//加号重载
 Complex Complex::operator+(Complex& c)
 {
     Complex i;
@@ -21,6 +23,7 @@ Complex Complex::operator+(Complex& c)
     i.it=it+c.it;
     return i;
 }
+//减号重载
 Complex Complex::operator-(Complex& c)
 {
     Complex i;
@@ -28,6 +31,7 @@ Complex Complex::operator-(Complex& c)
     i.it=it-c.it;
     return i;
 }
+//对int类型的加号
 Complex Complex::operator+(int a)
 {
     Complex i;
@@ -35,17 +39,22 @@ Complex Complex::operator+(int a)
     i.it=it;
     return i;
 }
+//输出流的重载
 ostream& operator<<(ostream &o,Complex &c)
 {
     o<<"("<<c.real<<"+"<<c.it<<"i)";
     return o;
 }
+//输入流的重载
 istream& operator>>(istream&i,Complex&c)
 {
-    i>>c.real;      
+    cout<<"输入实数部分:";
+    i>>c.real;
+    cout<<"输入虚数部分:";      
     i>>c.it;
     return i;
 }
+
 int main()
 {
     Complex c1(2,3);

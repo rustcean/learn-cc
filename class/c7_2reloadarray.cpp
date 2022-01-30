@@ -10,8 +10,8 @@ class Student
     private:
     int array[NUM];
 };
-
-Student Student::operator+(Student &arr)//重载"+"用于数组的加法
+//重载"+"用于数组的加法
+Student Student::operator+(Student &arr)
 {
     Student c;//用来返回赋值
     for(int i=0;i<NUM;i++)

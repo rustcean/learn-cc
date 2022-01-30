@@ -3,7 +3,7 @@ using namespace std;
 int main()
 {
     int max(int x,int y);
-    int (*p)(int,int);
+    int (*p)(int,int);//指向函数的指针
     p=max;
     int a,b,m;
     cin>>a>>b;

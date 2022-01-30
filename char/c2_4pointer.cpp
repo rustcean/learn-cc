@@ -15,7 +15,7 @@ void sort(char *name[],int n)
 {
     char *temp;
     int i,j,k;
-    for(i=0;i<n-1;i++)
+    for(i=0;i<n-1;i++)//选择插入法
     {
         k=i;
         //

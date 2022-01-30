@@ -17,15 +17,17 @@ int main()
     cout<<endl;
     return 0;
 }
-void select_sort(int *p,int n)
+void select_sort(int *p,int n)//排序
 {
     int i,j,k,t;
     for(i=0;i<n-1;i++)
     {
         k=i;
+        //
         for(j=i+1;j<n;j++)
         if(*(p+j)<*(p+k))
         k=j;
+        //循环只到这里
         t=*(p+k);
         *(p+k)=*(p+i);
         *(p+i)=t;
