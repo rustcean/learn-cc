@@ -30,7 +30,7 @@ int main()
     Barney b1;
     f1.c.x=&f1;
     f1.c.x->c.x->fun();
-    f1.y->x->fun();
+    f1.y->x->fun(); 
     b1.x=&f1;
     f1.y=&b1;
     // f1.fun();

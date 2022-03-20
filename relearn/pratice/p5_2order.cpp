@@ -1,3 +1,6 @@
+/**
+ * 继承的顺序学习,先基类再组合,先声明的先,再按前后顺序
+*/
 #include <iostream>
 using namespace std;
 class A

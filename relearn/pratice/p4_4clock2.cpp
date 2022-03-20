@@ -1,5 +1,6 @@
-/**
+/**学习:
  * 前++跟后++的重载
+ * 友元的前--和后--
 */
 #include <iostream>
 using namespace std;

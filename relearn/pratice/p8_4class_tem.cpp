@@ -3,20 +3,20 @@ using namespace std;
 template <class T,int MAXSIZE>
 class Stack
 {
-    T elem[MAXSIZE];
-    int top;//
+    T elem[MAXSIZE];//MAXSIZE大小的数组
+    int top;
     public:
     Stack(){top=0;}
     void push(T e);
     T pop();
-    bool empty()
+    bool empty()//判断是否空
     {
-        if(top<=-1)return 1;//
+        if(top<=-1)return 1;
         else return 0;
     }
     void setEmpty()//置空
     {top=0;}
-    bool full()//判断是否满了
+    bool full()//判断是否满了--MAXSIZE
     {
         if(top>=MAXSIZE-1)return 1;
         else return 0;

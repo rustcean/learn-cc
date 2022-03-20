@@ -1,7 +1,7 @@
 /**
  * @file p5_4.virtual.cpp
  * @author wnanqun
- * @brief继承: 
+ * @brief 多继承的二义性问题-虚基继承
  * 
  * @version 0.1
  * @date 2022-01-16

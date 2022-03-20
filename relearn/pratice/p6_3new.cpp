@@ -1,3 +1,6 @@
+/***
+ * new学习
+*/
 #include <iostream>
 using namespace std;
 class A
@@ -12,13 +15,13 @@ class B:public A
     B(int i){buf=new char[i];}
     ~B()
     {
-        delete [] buf;
+        delete [] buf;//释放
         cout<<"call B::~B()"<<endl;
     }
 };
 int main()
 {
-    A *a=new B(10);
+    A *a=new B(10);//释放
     delete a;
     return 0;
 }

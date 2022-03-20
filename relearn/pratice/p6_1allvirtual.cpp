@@ -48,10 +48,9 @@ int main()
     p->area();
     Figure &rp=t;
     rp.area();
-    rp=r;
-    rp.area();
-   Figure && r2p=t;
-   r2p.area();
+    rp=r;//引用不能被重新赋值
+    rp.area();//输出矩形
+   
     return 0;
     
 }

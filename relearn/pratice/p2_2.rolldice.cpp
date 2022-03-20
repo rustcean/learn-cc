@@ -1,4 +1,14 @@
-#include <iostream>
+/*rand函数:
+*虽然在本程序中每一个rand函数的值都不一样,,但在每一次执行程序时,输出的值不变
+*srand来初始化,保证每次执行都不一样
+*－rand()%6 ：即指定範圍需要由起始數開始取6個數值，包括起始數
+*－rand()%6+2：+2 的意思是指定起始數是2，然後由2開始取六個數作為range(包括2)
+                若沒有+2，起始數預設是0。
+*/
+//
+/*这是掷骰子游戏,但不正常
+*/
+#include <iostream>//看着不准确
 #include <cstdlib>
 using namespace std;
 int rolldice(unsigned );

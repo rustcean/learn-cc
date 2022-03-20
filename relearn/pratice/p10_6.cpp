@@ -20,7 +20,7 @@ int main()
     cout.width(30);
     cout<<d<<"---L4"<<"\n";
     cout.width(30);
-    cout.setf(ios::oct,ios::basefield);
+    cout.setf(ios::oct,ios::basefield);// 
     cout<<100<<"---L5"<<endl;
     return 0;
 }

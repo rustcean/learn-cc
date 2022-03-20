@@ -1,3 +1,6 @@
+/*
+*继承的练习
+*/
 #include <iostream>
 using namespace std;
 class Point

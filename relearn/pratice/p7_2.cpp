@@ -2,7 +2,6 @@
 *new,struct,[]的运用
 *
 */
-
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -48,10 +47,10 @@ class SalaryManage
 int main()
 {
     SalaryManage s(3);
-    s["张三"]=2188.88;
-    s["里斯"]=1230.07;
-    s["王五"]=3200.89;
-    s["小花"]=3300.01;
+    s["张三"]=2188.88;//n=0
+    s["里斯"]=1230.07;//n=1
+    s["王五"]=3200.89;//n=2
+    s["小花"]=3300.01;//n=3
     cout<<"张三\t"<<s["张三"]<<endl;
     cout<<"里斯\t"<<s["里斯"]<<endl;
     cout<<"王五\t"<<s["王五"]<<endl;

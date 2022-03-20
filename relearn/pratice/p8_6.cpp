@@ -2,10 +2,11 @@
 #include <cstring>
 using namespace std;
 const int Size=5;
+//类模板
 template <class T>
 class Array
 {
-    T a[Size];
+    T a[Size];//private
     public:
     Array()
     {for(int i=0;i<Size;i++)a[i]=0;}
@@ -20,7 +21,7 @@ T &Array<T>::operator[](int i)
     return a[i];
 }
 template <class T>
-void Array<T>::sort()
+void Array<T>::sort()//排序
 {
     int p;
     for(int i=0;i<Size-1;i++)
@@ -34,15 +35,15 @@ void Array<T>::sort()
         a[i]=t;
     }
 }
-//特化
-template <>void Array<char *>::sort()
+//面对char*特化
+template<>void Array<char *>::sort()
 {
     int p;
     for(int i=0;i<Size-1;i++)
     {
         p=i;
         for(int j=i+1;j<Size;j++)
-        if(strcmp(a[p],a[j])<0)
+        if(strcmp(a[p],a[j])<0)//比较
         p=j;
         char *t=a[p];
         a[p]=a[i];
@@ -53,7 +54,7 @@ int main()
 {
     Array<int> a1;
     Array<char*>b1;
-    a1[0]=1;
+    a1[0]=1;//因为[]复用所以可以进行赋值
     a1[1]=23;
     a1[2]=6;
     a1[3]=3;

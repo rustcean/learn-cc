@@ -1,5 +1,7 @@
 /**
  * 特化:原本的模板功能不足时,特化出新的功能,--感觉-多态
+ * 类型转换:
+ * 
 */
 #include <iostream>
 #include <cstring>
@@ -9,7 +11,7 @@ T Max(T a,T b)
 {return a>b?a:b;}
 // 特化
 //template <>返回类型 函数名<特化的数据类型>(参数表){}
-template<>char *Max<char *>(char *a,char *b)
+template<>char*Max<char *>(char *a,char *b)
 {
     return (strcmp(a,b)>=0)?a:b;
 }
