@@ -1,5 +1,4 @@
 //数据的查找
-
 //search(int a[],int n,int num)
 //a[]数组对象  n 数组大小  num 目标
 
@@ -18,7 +17,7 @@ int Search(int a[],int n,int num)
         else if(num<a[mid])high=mid-1;
         else low=mid+1;
     }
-    return ;
+    return 0;
 }
 
 int main()
@@ -31,3 +30,10 @@ int main()
 }
 
 
+//定位问题--随机存取
+//数学上的转换--书名--字母的相对位置-hash办法
+//2812--放号码--计算--
+//查找过程转为计算过程
+
+
+//贪心算法

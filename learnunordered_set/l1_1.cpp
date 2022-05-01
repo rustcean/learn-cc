@@ -1,7 +1,7 @@
 //编译:g++ l1_1.cpp -o l11  无特别参数
 //初始化1,直接2,从数组
 //插入,insert()函数
-
+//输出的方法
 #include <iostream>
 #include <unordered_set>
 using namespace std;
@@ -35,7 +35,7 @@ int main()
     {cout<<*it<<" ";}
     cout<<endl;
 
-    //auto关键字
+    //可以用auto关键字换掉过长的iterator设置
     for(auto it=myset3.begin();it!=myset3.end();it++)
     {cout<<*it<<" ";}
     cout<<endl;
