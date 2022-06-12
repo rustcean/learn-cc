@@ -15,7 +15,7 @@
 //         memset(str,'\0',sizeof(str));
 //     }
 // };
-// node *root;//外部 头指针?
+// node *root;//外部 头指针
 
 // void inset(char *str1,char *str2)//建树
 // {
