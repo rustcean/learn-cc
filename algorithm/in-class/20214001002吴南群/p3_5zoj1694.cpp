@@ -10,7 +10,7 @@ int mat[10][10];//部分和
 int Max,flag[10],reject;
 int f[10];//记录剪切点
 
-void dfs( int x,int count )
+void DFS( int x,int count )
 {
     flag[x] = 1;
     int i;
@@ -29,7 +29,7 @@ void dfs( int x,int count )
         return;
     }
     for( i = x; i < num.length(); i++ )
-        dfs( i+1, count + mat[x][i]);
+        DFS( i+1, count + mat[x][i]);
     flag[x] = 0;
 }
 
@@ -51,8 +51,8 @@ int main(void)
                 mat[i][j] = sum;
             }//算出部分和
 
-        memset(flag,0,sizeof(flag));
-        dfs( 0,0 );
+        memset(flag,0,sizeof(flag));//
+        DFS( 0,0 );
         if( reject == 0 )//三种情况
             cout << "error" << endl;
         else if( reject > 1 )
