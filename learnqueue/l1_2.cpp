@@ -34,3 +34,8 @@ int generate(int root)
     }
     return maxlevel;
 }
+
+int main()
+{
+    return 0;
+}
