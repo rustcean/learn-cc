@@ -1,0 +1,1 @@
+/usr/bin/c++   -g -o2 -Wall  -rdynamic CMakeFiles/my_make_exe.dir/main.cpp.o CMakeFiles/my_make_exe.dir/src/Circle.cpp.o CMakeFiles/my_make_exe.dir/src/Point.cpp.o  -o my_make_exe 

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Circle.h
+Point.h
+../include/Point.h
+string
+-
+
+../include/Point.h
+
+/home/wnanqun/nanqun/learn-cc/mokuai/m2_1/main.cpp
+iostream
+-
+Circle.h
+/home/wnanqun/nanqun/learn-cc/mokuai/m2_1/Circle.h
+Point.h
+/home/wnanqun/nanqun/learn-cc/mokuai/m2_1/Point.h
+

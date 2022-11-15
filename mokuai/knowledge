@@ -1,0 +1,102 @@
+## 关于多文件程序:
+
+### .h文件和.cpp文件:
+.h头文件中，只能存在变量或者函数的声明，而不要放定义
+例外:
+1.文件中可以写 const 对象的定义。
+2.头文件中可以写内联函数（inline）的定义
+3.头文件中可以写类（class）的定义
+
+>规则
+1.函数声明：显然应该放在头文件中，前面很清楚。
+2.类定义、结构定义：用函数定义的逻辑想，似乎不能放在头文件中。但它应该放在头文件。第一，每个cpp文件应该有一个定义，在编译的时候编译器才知道怎么为对象分配空间。其次，类型定义不会在内存上分配空间。
+3.模板函数：编译器必须在编译的时候根据函数模板实例化对应的函数，所以应该放在头文件。
+4.内联函数：编译期间被插到调用位置，所以也要放在头文件。
+5.函数定义：不要！C++规定一个程序同签名的函数只能有一个定义。如果你把函数定义放在头文件件，并且同一个程序的多个cpp文件包含了该头文件，这样，在链接的时候会发现多个定义版本，链接报错。
+6.变量定义：不要！与上面类似，被多个文件包含的时候会出现多次定义同一个变量，链接错误。但是，static变量和extern变量可以，以及宏定义的常量，因为这些在多个文件出现并不会出错。
+
+### 在文件 b.cpp 中，在调用 "void a()" 函数之前，先声明一下这个函数 "voida();"，就可以了。这是因为编译器在编译 b.cpp 的时候会生成一个符号表（symbol table），像 "void a()" 这样的看不到定义的符号，就会被存放在这个表中。再进行链接的时候，编译器就会在别的目标文件中去寻找这个符号的定义。一旦找到了，程序也就可以顺利地生成了。
+
+因为.h文件中只包含声明，即使被多个源文件引用也不会导致“multiple definition”链接错误。
+
+### .h文件
+>\#ifndef myfunc_h
+\#define myfunc_h
+\#endif
+此写法的含义如下：如果没有定义该头文件，那就引入该头文件，否则就不需要引入。
+此写法一般写在头文件中防止该头文件被重复引用，被重复引用是指在同一个.cpp文件中多次调用了该头文件，比如a.h包含了c.h，而b.h包含了a.h和c.h，此时b.h就重复引用了c.h。
+头文件被重复引用引起的后果：可能会报错，增加编译量
+
+
+### 编译:不需要写.h文件
+可以先转为.o文件
+g++ -c xx1.cpp  xx2.cpp main.cpp 
+g++ xx1.o x2.o main.o -o program 
+
+也可以直接
+g++ xx..cpp xx.cpp main.cpp -o program
+ 
+ 
+ ###其他编译方法:
+ubuntu  terminal 编译命令： make
+其它一些远程操作命令： gmake
+输入命令：make clean   则执行 del *.o
+
+一般.cpp文件能不能放库文件 <iostream> :
+  可以--为了便于使用 多加 stdnamespace
+
+### 关于使用cmake和make
+CMakelist.txt--文件
+
+### 详细介绍make与cmake
+1.需要“Make”的原因是因为它使最终用户能够构建和安装您的软件包
+2.CMake代表跨平台制作
+3.CMake
+跨平台发现系统库。
+自动发现和配置工具链。
+将文件更容易地以平台的方式将文件编译到共享库中，并且一般比make更容易使用。
+
+
+### 关于make/makefile/cmake/nmake
+ cmake根据CMakelists.txt生成makefile,make根据makefile中的指令进行编译和链接 最后生成需要的可执行程序
+
+nmake是Microsoft Visual Studio中的附带命令，需要安装VS，实际上可以说相当于linux的make 
+vs把类似于makefile的东西（vcproj文件）给你藏起来了
+
+
+### 另外的c和c++管理工具
+clion:
+CLion是以IntelliJ为基础，专为开发C及C++所设计的跨平台IDE，可以在Windows、Linux及MacOS使用
+去官网直接下载  https://www.jetbrains.com/clion/
+1.解压:  tar -zxvf CLion-2019.3.3.tar.gz
+2.运行脚本: 
+cd clion-2019.3.3/bin/
+./clion.sh  
+3.打开workspace
+
+参考链接: 
+https://blog.csdn.net/ning1350/article/details/109511871   
+--CLion如何编译Makefile工程 --包含了插件等的使用
+
+https://www.jetbrains.com/zh-cn/clion/learn/
+--专门的学习链接--进阶版就是了
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
