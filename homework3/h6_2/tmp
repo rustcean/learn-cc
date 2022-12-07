@@ -1,0 +1,75 @@
+#include <queue>
+#include <map>
+using namespace std;
+//节点
+struct Node {
+    string c;  //储存字符
+    int freq;//储存频率
+    Node *left;
+    Node *right;    
+    Node(string _c, int f, Node *l = nullptr, Node *r = nullptr)
+        : c(_c), freq(f), left(l), right(r) {}
+    bool operator<(const Node &node) const { //重载，优先队列的底层数据结构std::heap是最大堆
+        return freq > node.freq;
+    }
+};
+//树类
+class huffTree {
+public:
+    huffTree(const std::map<string, int>& afMap) {
+        for (auto i : afMap) {
+            Node n(i.first, i.second);//赋值
+            q.push(n);//放入队列中
+        }
+        makehuffTree();//初始化哈夫曼树
+    }
+    ~huffTree() {
+        Node node = q.top();
+        _deleteTree(node.left);
+        _deleteTree(node.right);
+    }
+    //创建树
+    void makehuffTree() {
+        while (q.size() != 1) {//当队列不小于1
+            Node *left = new Node(q.top()); q.pop();//左节点指向下一个,出队
+            Node *right = new Node(q.top()); q.pop();//右节点指向下一个,出队，所以右边就是对应的外节点
+            Node node("R", left->freq + right->freq, left, right);//制造内节点
+            q.push(node);//压入
+        }
+    }
+    //获取队列头结点
+    Node getHuffTree() {
+        return q.top();
+    }
+private:
+    void _deleteTree(Node* n) {
+        if (!n) return ;
+        _deleteTree(n->left);
+        _deleteTree(n->right);
+        delete n;
+    }
+    //打印
+    void treeWatch(Node* root);
+    //打印出来
+    static void _printNode(Node *n)
+    {
+        if (!n)
+        {
+            cout<<n->c<<n->freq<<endl;
+        }
+    }
+private:
+    std::priority_queue<Node> q;//优先队列
+};
+
+
+
+//encode
+
+//存储每个字符及其哈夫曼编码
+typedef struct {
+    char ch;
+    char code[NUM];
+}HFCharCode;
+
+

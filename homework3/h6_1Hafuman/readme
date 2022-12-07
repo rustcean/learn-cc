@@ -1,0 +1,15 @@
+encode    参与编码的文件
+hfmTree   存入哈夫曼树的文件
+ToBeTran  待编译的文件
+CodeFile  编码结果
+TextFile  译码结果
+CodePrint 把CodeFile的内容以50字为一行输出后存入
+
+
+实验6哈夫曼.docx   报告
+实验四.docx        原文题目
+main.cpp 主函数文件
+main.h   主函数文件
+main     可执行程序
+
+

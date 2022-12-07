@@ -1,0 +1,2 @@
+#! /bin/bash
+g++ huffdecode.h huffencode.h huffman.h huffTree.h main.cpp -o main
