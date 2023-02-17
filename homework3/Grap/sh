@@ -1,0 +1,11 @@
+#!/bin/sh
+uic F_first.ui -o ui_F_first.h
+uic S_first.ui -o ui_S_first.h
+uic T_first.ui -o ui_T_first.h
+
+#1.
+北京
+5
+大连 重庆 长沙 南京 昆明 
+3168
+
