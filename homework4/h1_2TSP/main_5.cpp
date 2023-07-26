@@ -8,8 +8,8 @@ const int maxn=20;
 const int maxm=1000;
 
 int n=5;                //城市数量
-int M=100;              //免疫个体数量
-int T=50;               //免疫代数
+int M=100;              //遗传个体数量
+int T=50;               //遗传代数
 int Nnum=50;             //克隆数量 
 int dist[maxn][maxn];   //记录城市间距离
 

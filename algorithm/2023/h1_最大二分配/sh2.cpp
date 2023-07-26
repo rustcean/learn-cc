@@ -1,0 +1,78 @@
+// 匈牙利算法
+// 复杂度 O(n**3) n是节点数
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+const int MAXN=100; //最大节点数
+
+int match[MAXN];    //记录匹配情况
+bool vis[MAXN];     //记录是否访问过
+bool g[MAXN][MAXN]; //邻接矩阵表示的二分图
+
+int n,m;    //两边节点数
+
+bool dfs(int u){
+    // 从节点u开始进行增广路查找
+    for(int v=0;v<m;v++){
+        if(g[u][v] && !vis[v]){
+            // 如果u和v之间有边,且v没有被访问过
+            vis[v]=true;    //标记已经被访问
+            if(match[v]==-1 || dfs(match[v])){
+                // 如果v没有被匹配,或v已经匹配但可以找到更好的匹配
+                match[v]==u;    //更新v的匹配
+                cout<<u<<"--"<<v<<endl;
+                return true;    //返回查找成功
+            }
+        }
+    }
+    return false;   //如果不存在增广路,则返回查找失败
+}
+
+int maxMatch(){
+    // 计算最大匹配数
+    int cnt=0;  //记录匹配数
+
+    memset(match,-1,sizeof(match)); //初始化为-1,都没有被匹配
+    for(int u=1;u<=n;u++){
+        // 枚举所有左部节点
+        memset(vis,false,sizeof(vis));  //每次查找时清空访问标记
+        if(dfs(u))
+            cnt++;  //如果从u出发可以找到增广路,则更新匹配数        
+    }    
+    return cnt;
+}
+
+
+int main(){
+    
+    n=4;    //左节点数
+    m=3;    //右节点数
+    memset(g,false,sizeof(g));  //初始化邻接矩阵
+    // 5条链接
+    g[1][2]=true;
+    g[2][1]=true;
+    g[2][3]=true;
+    g[3][1]=true;
+    g[4][2]=true;
+    cout<<"链接情况: "<<endl;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=m;j++)
+            if(g[i][j]==true)
+                cout<<i<<"-->"<<j<<endl;
+    }
+
+    cout<<"最大匹配数: \n"<<maxMatch()<<endl; //输出
+    return 0;
+}
+
+
+/*
+6 5
+1 4
+1 5
+2 5
+2 6
+3 4 
+*/
