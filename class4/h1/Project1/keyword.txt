@@ -1,0 +1,83 @@
+asm
+auto
+bool
+break
+case
+cin
+char
+cout
+catch
+char
+class
+const
+const_cast
+cast
+condition
+continue
+default
+delete
+do
+double
+dynamic_cast
+else
+enum
+explicit
+export
+extern
+false
+float
+for
+friend
+goto
+if
+include
+long double
+long int
+long long int
+long long double
+long
+inline
+int
+mutable
+main
+namespace
+new
+operator
+private
+protected
+public
+register
+reinternpret_cast
+return
+short
+signed
+sizeof
+string
+std
+sized
+static
+switch
+template
+this
+throw
+true
+try
+typedef
+typeid
+typename
+union
+using
+unsigned
+unsigned int
+unsigned long
+unsigned double
+unsigned long long
+unsigned long long double
+unsigned long long int
+virtual
+void
+volatile
+void
+volatile
+wchar_t
+while
